@@ -1,0 +1,16 @@
+<h1>Parks for the State of <%= params[:state] %>:</h1>
+
+<% @parks.each do |park| %>
+  <h2>Park Name: <%= park.name %></h2>
+  <p>Park Description: <%= park.description %></p>
+  <p>Direction Info: <%= link_to park.directions, "#{park.directions}" %></p>
+  <ul>Hours of Operation: 
+    <li>Monday: <%= park.hours[:monday] %></li>
+    <li>Tuesday: <%= park.hours[:tuesday] %></li>
+    <li>Wednesday: <%= park.hours[:wednesday] %></li>
+    <li>Thursday: <%= park.hours[:thursday] %></li>
+    <li>Friday: <%= park.hours[:friday] %></li>
+    <li>Saturday: <%= park.hours[:saturday] %></li>
+    <li>Sunday: <%= park.hours[:sunday] %></li>
+  </ul>
+<% end %>
