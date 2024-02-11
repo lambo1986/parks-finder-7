@@ -7,7 +7,7 @@ class ParkService
   end
 
   def parks_by_state(state)
-    data = get_url("parks?stateCode=mn&api_key=#{API_KEY}")
+    data = get_url("parks?stateCode=#{state}&api_key=#{API_KEY}")
     data[:data]#.first threw me off. needed the whole array!!
   end
 
