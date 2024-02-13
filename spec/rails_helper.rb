@@ -66,5 +66,6 @@ VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
   config.configure_rspec_metadata!
+  config.filter_sensitive_data('<HIDDEN_KEY>') { ENV['PARK_API_KEY'] }
+  config.ignore_localhost = true
 end
-
